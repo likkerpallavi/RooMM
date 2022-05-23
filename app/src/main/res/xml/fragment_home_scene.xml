@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3000">
+       <KeyFrameSet>
+           <KeyAttribute />
+           <KeyAttribute
+               motion:motionTarget="@+id/card2"
+               motion:framePosition="100"
+               android:alpha="0" />
+           <KeyAttribute />
+           <KeyAttribute
+               motion:motionTarget="@+id/card2"
+               motion:framePosition="100"
+               android:scaleX="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/card2"
+               motion:framePosition="100"
+               android:scaleY="0" />
+       </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/scrollView2"
+            motion:touchAnchorSide="top" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/scrollView2"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.0"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="230dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/scrollView2"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.0"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="145dp" />
+        <Constraint
+            android:id="@+id/card2"
+            motion:layout_constraintEnd_toEndOf="@+id/card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/card1"
+            motion:layout_constraintStart_toStartOf="@+id/card1"
+            android:visibility="invisible" />
+    </ConstraintSet>
+</MotionScene>
